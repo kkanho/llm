@@ -126,7 +126,12 @@ export default function Home() {
                         )
                     )}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 relative">
+                    <div className={`absolute flex gap-2 -top-10 left-1/2 -translate-x-1/2 ${submitting? "" : "hidden"}`}>
+                        <div className="w-4 h-4 bg-white rounded-full animate-pulseBounce"></div>
+                        <div className="w-4 h-4 bg-white rounded-full animate-pulseBounce delay-100"></div>
+                        <div className="w-4 h-4 bg-white rounded-full animate-pulseBounce delay-200 "></div>
+                    </div>
                     <div className="grid w-10 items-center relative">
                         <TooltipProvider>
                             <Tooltip>

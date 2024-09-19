@@ -55,7 +55,17 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		keyframes: {
+			pulseBounce: {
+				'0%, 100%': { transform: "translateY(-25%)", opacity: '1' },
+				'50%': { transform: "translateY(0)", opacity: '0.5' },
+			},
+
+		},
+		animation: {
+			pulseBounce: 'pulseBounce 1.5s infinite'
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
