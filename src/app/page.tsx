@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Markdown from "react-markdown";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Paperclip, Plus, Send } from "lucide-react";
+import { ImageUp, Plus, Send } from "lucide-react";
 import { askLLM, askLLMWithImage } from "./actions";
 import { useRef, useEffect, useState } from "react";
 import { Label } from "@/components/ui/label";
@@ -137,7 +137,7 @@ export default function Home() {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <Label htmlFor="files" className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 ${imageFile? "text-red-700": ""}`}>
-                                        <Paperclip className="cursor-pointer"/>
+                                        <ImageUp className="cursor-pointer"/>
                                     </Label>
                                     <Input type="file" id="files" onChange={handleAttachment} className="w-full z-10 invisible" accept="image/png, image/jpeg, image/jpg" disabled={submitting}/>
                                 </TooltipTrigger>
