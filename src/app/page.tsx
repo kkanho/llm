@@ -72,6 +72,12 @@ export default function Home() {
 
             if (!imageFile) {
                 const res = await askLLM(prompt)
+
+                if (!res || res === "") {
+                    setMessages((prev) => [...prev, { id: uuidv4(), type: 'response', text: "No response from LLM" }])
+                    return
+                }
+
                 setMessages((prev) => [...prev, { id: uuidv4(), type: 'response', text: res }])
             } else {
                 const imageData = await convertBase64(imageFile)
